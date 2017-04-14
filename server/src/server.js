@@ -29,6 +29,7 @@ app.post(function(req, res) {
     }
 });
 
+var token = 'eyJpZCI6NH0=';
 var readDocument = require('./database').readDocument;
 function getFeedItemSync(feedItemId) {
   var feedItem = readDocument('feedItems', feedItemId);
