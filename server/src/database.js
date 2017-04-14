@@ -102,6 +102,7 @@ var initialData = {
       "contents": []
     }
   }
+  
 };
 
 var data;
