@@ -4,7 +4,7 @@ var express = require('express');
 var app = express();
 
 // Defines what happens when it receives the `GET /` request
-app.get('/', function(req, res) {
+app.get(function(req, res) {
     res.send('Hello World!');
 });
 
@@ -15,11 +15,11 @@ app.listen(3000, function() {
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.text());
-
+app.use(express.static('../client/build'));
 // Imports the Util module.
 var util = require('./util');
 // Handle POST /reverse [data]
-app.post('/reverse', function(req, res) {
+app.post(function(req, res) {
     if (typeof(req.body) === 'string') {
         var reversed = util.reverseString(req.body);
         res.send(reversed);
